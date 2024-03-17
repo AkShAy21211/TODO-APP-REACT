@@ -1,25 +1,44 @@
-import logo from './logo.svg';
+import React, { useEffect, useState ,useMemo,useRef} from "react";
 import './App.css';
+import "./style.css";
+import Style from "./style.module.css"
+import "./style.scss"
+import { Button,Alert,Card } from 'react-bootstrap';
+import ChildCom from "./ChildCom";
+import Ref from "./Ref";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+
+function  App(){
+
+
+  let inputRef1 = useRef(null);
+  let inputRef2 = useRef(null);
+
+  const submit = (e)=>{
+
+    e.preventDefault();
+    console.log("firest input value1",inputRef1.current.value);
+    console.log("firest input value2",inputRef2.current.value);
+
+    let input3 = document.getElementById("input3").value;
+
+    console.log("three input value",input3);
+
+  }
+
+return(
+  <React.Fragment>
+    <h1> react </h1>
+    <form onSubmit={submit}>
+      <input type="text" ref={inputRef1}/>
+      <input type="text" ref={inputRef2}/>
+      <input type="text" id="input3"/>
+      <button >submit</button>
+    </form>
+  </React.Fragment>
+)
 }
 
 export default App;
