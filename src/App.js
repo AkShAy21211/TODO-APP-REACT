@@ -13,7 +13,7 @@ function App() {
       <Container className="text-center mt-5">
         <Row>
           <Col>
-            <h1>TODP APP REACT 📝</h1>
+            <h1>TODO APP 📝</h1>
           </Col>
         </Row>
         <Row>
